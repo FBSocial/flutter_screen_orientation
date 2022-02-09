@@ -17,7 +17,7 @@ class FlutterScreenOrientationAndroidService extends FlutterScreenOrientationSer
           return;
         }
         lastOrientation = orientation;
-        orientationCallback(orientation);
+        orientationCallback!(orientation);
       }
     });
     _channel.invokeMethod("init");
