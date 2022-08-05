@@ -21,7 +21,7 @@ static FlutterMethodChannel *methodChannel;
 - (void)deviceOrientaionDidChange:(NSNotification *)noty {
 
     UIDevice *device = [UIDevice currentDevice] ;
-    NSLog(@"%ld", device.orientation);
+//    NSLog(@"%ld", device.orientation);
     switch (device.orientation) {
         case UIDeviceOrientationPortrait:
            [methodChannel invokeMethod:@"orientationCallback" arguments:@"1"];
