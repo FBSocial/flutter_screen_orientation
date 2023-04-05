@@ -81,7 +81,11 @@ public class FlutterScreenOrientationPlugin implements FlutterPlugin, MethodCall
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
-      mOrientationListener.disable();
+      try{
+        mOrientationListener.disable();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 }
